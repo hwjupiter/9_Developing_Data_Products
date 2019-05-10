@@ -1,0 +1,51 @@
+---
+title: "My Kitchen Timer App"
+author: "Helen Wright"
+date: "08 May 2019"
+output: ioslides_presentation
+---
+
+## Introduction
+
+- This app was created as the final project for the Developing Data Products course on Coursera
+- It is a simple kitchen countdown timer, developed using the Shiny library
+
+## Here is a code sample for the UI setup:
+```{r sample, warning = FALSE, message = FALSE, echo = TRUE, results = 'hide', tidy=TRUE}
+library(shiny)
+library(lubridate)
+# Define UI for my small timer application
+shinyUI(fluidPage(
+  # Application title
+  titlePanel("My Kitchen Timer"),
+  sidebarLayout(
+    # set up the sidepanel layouts and define what 
+    # the user will see and be interacting with
+    sidebarPanel(helpText("Enter your desired cooking time:"),     
+                 # these are numerical input boxes for the user
+                 numericInput('hrs', 'Hours:', value = 0, min = 0, 
+                              max = 10, step = 1),
+                 numericInput('mns', 'Minutes:', value = 0, min = 0, 
+                              max = 60, step = 1),
+                 numericInput('scs','Seconds:',value=0,min=0,
+                              max=60,step=1)
+    ),
+    mainPanel())))
+```
+
+## What the App Does
+
+- The time entered by the user, in hours, minutes and seconds, is converted to seconds, for ease of counting
+- Once the user presses the start button, the total number of seconds is decreased by one until zero is reached
+- The time remaining is displayed on the app in hours, minutes and seconds for ease of reading by the user
+
+## Operation Instructions
+
+- Enter the desired time ( hours, minutes and seconds) in the specified boxes on the left of the app screen
+- Press the "Reset" button to load the time into the timer
+- Press the "Start" button to start the timer countdown
+- Press the "Stop" button to pause the countdown
+- When the timer has counted down to zero, a pop-up will open and a sound will play to let you know that the time is up
+- We hope you enjoy your new Timer. Happy baking :-)
+
+
