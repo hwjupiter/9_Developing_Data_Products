@@ -1,0 +1,12 @@
+name: example01
+title: example01
+username:
+account: hwjupiter
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 922052
+bundleId: 2074752
+url: https://hwjupiter.shinyapps.io/example01/
+when: 1557483995.08559
+asMultiple: FALSE
+asStatic: FALSE
